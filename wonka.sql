@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `msproduct`
+-- Table structure for table `MsProduct`
 --
 
-CREATE TABLE `msproduct` (
+CREATE TABLE `MsProduct` (
   `ProductID` int(11) NOT NULL,
   `ProductName` varchar(255) NOT NULL,
   `ProductCategoryID` int(11) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `msproduct` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `msproduct`
+-- Dumping data for table `MsProduct`
 --
 
-INSERT INTO `msproduct` (`ProductID`, `ProductName`, `ProductCategoryID`, `ProductDescription`, `ProductPrice`) VALUES
+INSERT INTO `MsProduct` (`ProductID`, `ProductName`, `ProductCategoryID`, `ProductDescription`, `ProductPrice`) VALUES
 (1, 'Golden Ticket Bar', 1, 'Milk chocolate with a chance to win prizes', 4.99),
 (2, 'Dark Chocolate Supreme', 1, '70% dark chocolate with sea salt', 5.49),
 (3, 'White Chocolate Dream', 1, 'Creamy white chocolate with vanilla', 4.79),
@@ -65,19 +65,19 @@ INSERT INTO `msproduct` (`ProductID`, `ProductName`, `ProductCategoryID`, `Produ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `msproductcategory`
+-- Table structure for table `MsProductCategory`
 --
 
-CREATE TABLE `msproductcategory` (
+CREATE TABLE `MsProductCategory` (
   `ProductCategoryID` int(11) NOT NULL,
   `ProductCategoryName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `msproductcategory`
+-- Dumping data for table `MsProductCategory`
 --
 
-INSERT INTO `msproductcategory` (`ProductCategoryID`, `ProductCategoryName`) VALUES
+INSERT INTO `MsProductCategory` (`ProductCategoryID`, `ProductCategoryName`) VALUES
 (1, 'Chocolate Bars'),
 (2, 'Hard Candies'),
 (3, 'Gummy & Soft Candies'),
@@ -89,16 +89,16 @@ INSERT INTO `msproductcategory` (`ProductCategoryID`, `ProductCategoryName`) VAL
 --
 
 --
--- Indexes for table `msproduct`
+-- Indexes for table `MsProduct`
 --
-ALTER TABLE `msproduct`
+ALTER TABLE `MsProduct`
   ADD PRIMARY KEY (`ProductID`),
   ADD KEY `ProductCategoryID` (`ProductCategoryID`);
 
 --
--- Indexes for table `msproductcategory`
+-- Indexes for table `MsProductCategory`
 --
-ALTER TABLE `msproductcategory`
+ALTER TABLE `MsProductCategory`
   ADD PRIMARY KEY (`ProductCategoryID`);
 
 --
@@ -106,15 +106,15 @@ ALTER TABLE `msproductcategory`
 --
 
 --
--- AUTO_INCREMENT for table `msproduct`
+-- AUTO_INCREMENT for table `MsProduct`
 --
-ALTER TABLE `msproduct`
+ALTER TABLE `MsProduct`
   MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `msproductcategory`
+-- AUTO_INCREMENT for table `MsProductCategory`
 --
-ALTER TABLE `msproductcategory`
+ALTER TABLE `MsProductCategory`
   MODIFY `ProductCategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -122,10 +122,10 @@ ALTER TABLE `msproductcategory`
 --
 
 --
--- Constraints for table `msproduct`
+-- Constraints for table `MsProduct`
 --
-ALTER TABLE `msproduct`
-  ADD CONSTRAINT `msproduct_ibfk_1` FOREIGN KEY (`ProductCategoryID`) REFERENCES `msproductcategory` (`ProductCategoryID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `MsProduct`
+  ADD CONSTRAINT `msproduct_ibfk_1` FOREIGN KEY (`ProductCategoryID`) REFERENCES `MsProductCategory` (`ProductCategoryID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
