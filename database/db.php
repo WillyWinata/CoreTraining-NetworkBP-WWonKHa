@@ -1,8 +1,10 @@
 <?php
-$host = "localhost";
-$user = "WWonKHa";
-$pass = "WWonKHa";
-$dbname = "wonka";
+$env = parse_ini_file(__DIR__ . '/.env');
+
+$host = $env['DB_HOST'];
+$user = $env['DB_USER'];
+$pass = $env['DB_PASS'];
+$dbname = $env['DB_NAME'];
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
