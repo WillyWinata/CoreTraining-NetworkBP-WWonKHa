@@ -3,7 +3,7 @@ $page_title = "Home - WWonKHa's Chocolate Factory";
 $current_page = "home";
 include 'includes/header.php';
 
-require_once 'database/db.php';
+require_once 'database/connection.php';
 
 
 ?>

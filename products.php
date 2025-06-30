@@ -3,7 +3,7 @@ $page_title = "Products - WWonKHa's Chocolate Factory";
 $current_page = "products";
 include 'includes/header.php';
 
-require_once 'database/db.php';
+require_once 'database/connection.php';
 
 $category_sql = "SELECT * FROM MsProductCategory ORDER BY ProductCategoryName ASC";
 $category_result = $conn->query($category_sql);
